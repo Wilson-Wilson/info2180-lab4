@@ -3,6 +3,8 @@ window.onload = function() {
     for (var i = 0; i < x.length - 1; i++) {
       x[i].onmouseenter = function() {overBoundaryExc2()};
     }
+
+    document.getElementById('end').onmouseenter = function() {win()};
 };
 
 function overBoundaryExc1() {
@@ -14,4 +16,10 @@ function overBoundaryExc2() {
     for (var i = 0; i < walls.length - 1; i++) {
       walls[i].className+=' youlose';
     }
+}
+
+function win() {
+  if (document.getElementById('boundary1').className!="boundary youlose") {
+    window.alert("YOU WIN!");
+  }
 }
