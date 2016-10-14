@@ -15,13 +15,14 @@ function overBoundaryExc1() {
 function overBoundaryExc2() {
     var walls = document.querySelectorAll(".boundary");
     for (var i = 0; i < walls.length - 1; i++) {
-      walls[i].className+=' youlose';
+      walls[i].className='boundary youlose';
     }
+    document.getElementById('status').innerHTML = 'YOU LOSE!';
 }
 
 function win() {
   if (document.getElementById('boundary1').className!="boundary youlose") {
-    window.alert("YOU WIN!");
+    document.getElementById('status').innerHTML = 'YOU WIN!';
   }
 }
 
@@ -31,5 +32,6 @@ function restart() {
     for (var i = 0; i < walls.length - 1; i++) {
       walls[i].className='boundary';
     }
+    document.getElementById('status').innerHTML = 'Move your mouse over the "S" to begin.';
   }
 }
