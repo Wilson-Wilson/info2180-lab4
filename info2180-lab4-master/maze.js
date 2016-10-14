@@ -1,7 +1,8 @@
 window.onload = function() {
-    document.getElementById("boundary1").onmouseenter = function() {overBoundaryExc2()};
-    //document.getElementById("boundary").onmouseenter = function() {overBoundaryExc2()};
-    //document.getElementsByClassName("boundary").onmouseenter = function() {overBoundaryExc2()};
+    var x = document.getElementsByClassName("boundary");
+    for (var i = 0; i < x.length - 1; i++) {
+      x[i].onmouseenter = function() {overBoundaryExc2()};
+    }
 };
 
 function overBoundaryExc1() {
