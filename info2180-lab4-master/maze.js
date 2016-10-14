@@ -5,6 +5,7 @@ window.onload = function() {
     }
 
     document.getElementById('end').onmouseenter = function() {win()};
+    document.getElementById('start').onclick = function() {restart()};
 };
 
 function overBoundaryExc1() {
@@ -21,5 +22,14 @@ function overBoundaryExc2() {
 function win() {
   if (document.getElementById('boundary1').className!="boundary youlose") {
     window.alert("YOU WIN!");
+  }
+}
+
+function restart() {
+  if (document.getElementById('boundary1').className=="boundary youlose") {
+    var walls = document.querySelectorAll(".boundary");
+    for (var i = 0; i < walls.length - 1; i++) {
+      walls[i].className='boundary';
+    }
   }
 }
