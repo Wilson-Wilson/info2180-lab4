@@ -5,7 +5,16 @@ window.onload = function() {
     }
 
     document.getElementById('end').onmouseenter = function() {win()};
-    document.getElementById('start').onclick = function() {restart()};
+    /*document.getElementById('start').onclick = function() {restart()};
+    document.getElementById('start').onclick = function() {setbounds()};*/
+    document.getElementById('start').onclick = function() {
+      if (document.getElementById('boundary1').className=="boundary") {
+        setbounds();
+      }else {
+        restart();
+      }
+    };
+
 };
 
 function overBoundaryExc1() {
@@ -33,5 +42,16 @@ function restart() {
       walls[i].className='boundary';
     }
     document.getElementById('status').innerHTML = 'Move your mouse over the "S" to begin.';
+  }
+  setbounds();
+}
+
+function setbounds() {
+  var x1 = event.clientX;
+  window.onmousemove = function() {
+    var x2 = event.clientX;
+    if (x2<x1) {
+      overBoundaryExc2();
+    }
   }
 }
