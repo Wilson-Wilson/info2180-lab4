@@ -5,8 +5,7 @@ window.onload = function() {
     }
 
     document.getElementById('end').onmouseenter = function() {win()};
-    /*document.getElementById('start').onclick = function() {restart()};
-    document.getElementById('start').onclick = function() {setbounds()};*/
+
     document.getElementById('start').onclick = function() {
       if (document.getElementById('boundary1').className=="boundary") {
         setbounds();
